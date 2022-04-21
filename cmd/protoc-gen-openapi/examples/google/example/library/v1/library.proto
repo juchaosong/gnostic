@@ -96,6 +96,10 @@ service LibraryService {
     option (google.api.http) = {
       post: "/v1/{name=shelves/*}/books"
       body: "book"
+      additional_bindings {
+        post: "/v1/books"
+        body: "book"
+      }
     };
     option (google.api.method_signature) = "name,book";
   }
